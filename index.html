@@ -5,12 +5,21 @@
   <title>PDF Merger</title>
 </head>
 <body>
-  <h1>Merge PDFs</h1>
+  <h1>PDF Merger Tool</h1>
   <input type="file" id="pdfFiles" multiple accept="application/pdf" />
+  <br><br>
   <button onclick="mergePDFs()">Merge PDFs</button>
-  <a id="downloadLink" style="display:none">Download Merged PDF</a>
+  <br><br>
+  <div id="options" style="display:none;">
+    <p>Select download method:</p>
+    <button onclick="downloadPDF()">Direct PDF Download</button>
+    <button onclick="downloadAsZip()">Download as ZIP</button>
+    <button onclick="openInTab()">Open in New Tab</button>
+  </div>
+  <a id="downloadLink" style="display:none;">Download Merged PDF</a>
 
   <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
